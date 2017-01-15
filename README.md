@@ -31,3 +31,8 @@
 * Use the *add_theme_support* hook in order to add various features, such as custom background, header and post thumbnails.
 * Add the code for header image in *header.php* in order to see it in every page.
 * Add the code for the posts' thumbnails in *index.php*.
+
+## 0.0.7 Post formats
+* Add theme support for post formats.
+* Use the *get_template_part* function in *index.php* in order to include template markups assigned to files.
+* Use along the *get_post_format* function in order to be able to select the template that matches the selected post format. The files containing the templates have to be named as [name given for the standard format]-[post-format].php, e.g. *"content-aside".php* and *"content-image".php* for the post formats *aside* and *image* respectively, given that the standard template container file is named *"content.php"* in this example.
