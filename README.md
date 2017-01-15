@@ -24,6 +24,10 @@
 
 ## 0.0.5 Custom specialized page templates
 * The default template is *index.php*.
-* Assign a custom template manually for an existing page: Create the *page-[specific-page-permalink].php* e.g. *page-about.php* and custom edit it. Another way to assign a specific template that is not affected by *permalink* changes is to use the *page-id* instead, hence create the *page-[page-id].php.
-
+* Assign a custom template manually for an existing page: Create the *page-[specific-page-permalink].php* e.g. *page-about.php* and custom edit it. Another way to assign a specific template that is not affected by *permalink* changes is to use the *page-id* instead, hence create the *page-[page-id].php*.
 * Create a page-template and assign it to each page that requires such a template. The template property of a page is declared with a comment stating the *Template Name* inside a php tag in the relevant file.
+
+## 0.0.6 Add theme features
+* Use the *add_theme_support* hook in order to add various features, such as custom background, header and post thumbnails.
+* Add the code for header image in *header.php* in order to see it in every page.
+* Add the code for the posts' thumbnails in *index.php*.
