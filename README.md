@@ -15,9 +15,15 @@
 * Add custom menus with *register_nav_menu*.
 * Add the appropriate *wp_nav_menu()* hooks in the header and footer, in order to be able to show menus there.
 
-## 0.0.4
-## Use the post loop
+## 0.0.4.1 Use the post loop
 * Edit *index.php* to loop through all posts.
-## Customize body classes
+
+## 0.0.4.2 Customize body classes
 * Use the *body_class()* in the header.  
 * Add logic for adding different classes to the home page and to other pages.
+
+## 0.0.5 Custom specialized page templates
+* The default template is *index.php*.
+* Assign a custom template manually for an existing page: Create the *page-[specific-page-permalink].php* e.g. *page-about.php* and custom edit it. Another way to assign a specific template that is not affected by *permalink* changes is to use the *page-id* instead, hence create the *page-[page-id].php.
+
+* Create a page-template and assign it to each page that requires such a template. The template property of a page is declared with a comment stating the *Template Name* inside a php tag in the relevant file.
