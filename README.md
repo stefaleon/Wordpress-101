@@ -5,6 +5,7 @@
 ## 0.0.1 Main files
 * Make the *theme01* folder in *wp-content/themes*. Add the stylesheet *style.css* and the template *index.php*.
 * Create the header and footer files, *header.php* and *footer.php*.
+* Call *get_header()* and *get_footer()* in *index.php*.
 
 ## 0.0.2 *functions.php*
 * Add the *css* and *js* folders and add basic styling in *theme01.css*.
@@ -42,7 +43,16 @@
 * Include jQuery (native in Wordpress).
 * Download, copy minified version in *css* folder and include *Bootstrap*.
 * Add the bootstrap navbar in header.
+
 ## 0.0.7.1.2 Style the default post template
 * Use the HTML5 *article* tag to wrap inside the *content.php* content.
 * Customize the *article* tag with Wordpress functions, provide a unique anchor identifier to each post with *the_ID()* and show the *post_class* CSS classes based on the post content with *post_class()*.
 * Use more HTML5 features, such as *header* and add Bootstrap classes and logic to display post columns depending on the presence of a thumbnail in the post.
+
+## 0.0.8 Sidebar and Widgets
+* In *functions.php* create a function that registers the sidebar and specifies its parameters. Then call an *add_action* hook to activate this custom function.
+* The sidebar is available through the widgets menu which now shows up as an *Appearance* submenu in the Dashboard and can be filled with widgets.
+* Create the *sidebar.php* file and call the *dynamic_sidebar* hook in it with the sidebar's id which was registered in its creation custom function.
+* Call *get_sidebar()* in *index.php*.
+* Style *index.php* with Bootstrap grid in order to place the sidebar on the right side of the grid.
+* In order for the sidebar to appear on pages with templates different than the default (per *index.php*), the same markup which includes the *dynamic_sidebar* hook has to be recreated in the respective template file.
