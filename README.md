@@ -37,8 +37,12 @@
 * Use the *get_template_part* function in *index.php* in order to include template markups assigned to files.
 * Use along the *get_post_format* function in order to be able to select the template that matches the selected post format. The files containing the templates have to be named as [name given for the standard format]-[post-format].php, e.g. *"content-aside".php* and *"content-image".php* for the post formats *aside* and *image* respectively, given that the standard template container file is named *"content.php"* in this example.
 
-## 0.0.7.1 Enable jQuery, add a Bootstrap Navigation Bar
+## 0.0.7.1.1 Enable jQuery, add a Bootstrap Navigation Bar
 * Add comments.
 * Include jQuery (native in Wordpress).
 * Download, copy minified version in *css* folder and include *Bootstrap*.
 * Add the bootstrap navbar in header.
+## 0.0.7.1.2 Style the default post template
+* Use the HTML5 *article* tag to wrap inside the *content.php* content.
+* Customize the *article* tag with Wordpress functions, provide a unique anchor identifier to each post with *the_ID()* and show the *post_class* CSS classes based on the post content with *post_class()*.
+* Use more HTML5 features, such as *header* and add Bootstrap classes and logic to display post columns depending on the presence of a thumbnail in the post.
