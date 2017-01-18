@@ -63,3 +63,8 @@
 
 ## 0.0.10.1 Style the main page featured content
 * Create *content-featured.php* which can be used as a component. Apply the desired Bootstrap grid column styling when calling to it with *get_template_part('content','featured')* inside *page-home.php*.
+
+## 0.0.10.2 Filter the WP Query with categories
+* Add a *category_in* filter in the arguments array of the *WP Query* object, which allows the display of certain categories of posts only, declared by the tag_IDs of the desired categories which can be seen in each category's URI the Dashboard.
+* The undesired categories can be filtered out with the use of the *category_not_in* filter.
+* In order to include the last post of each selected category instead of the latest of all posts of all desired categories, the loop logic needs a rearrangement. The desired categories are included in an argument provided to *get_categories()* and the result is introduced into a foreach loop whereof one post for each selected category is extracted via the performed post loop on each single category *WP Query* object.

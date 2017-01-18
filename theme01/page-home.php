@@ -3,9 +3,43 @@
 <div class="row">
 
         <?php
-            $args = array(
+
+            $args_cat = array(
+                'include' => '7, 8, 9'
+            );
+
+            $categories = get_categories($args_cat);            
+            foreach($categories as $category):
+
+                $args = array(
+                    'type' => 'post',
+                    'posts_per_page' => 1,
+                    'category__in' => $category->term_id,
+                    'category__not_in' => array(1)          /* do not display the uncategorised */
+                );
+                $lastBlogPost = new WP_Query($args);
+
+                if($lastBlogPost->have_posts()):
+                        while($lastBlogPost->have_posts()): $lastBlogPost->the_post(); ?>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <?php  get_template_part('content','featured') ?>
+                            </div>
+
+                    <?php endwhile;
+                endif;
+
+                // prevent the new object from affecting the original WP query
+                wp_reset_postdata();
+
+            endforeach;
+
+
+/*            $args = array(
                 'type' => 'post',
                 'posts_per_page' => 3,
+                'category__in' => array(7, 8, 9),
+                'category__not_in' => array(1)
             );
             $lastBlogPost = new WP_Query($args);
 
@@ -21,6 +55,7 @@
 
             // prevent the new object from affecting the original WP query
             wp_reset_postdata();
+*/
         ?>
 </div>
 
@@ -40,7 +75,7 @@
 
         // Present another two posts, the second and third oldest from the category named "tutorials"
         // (skipping the first with the offset set to 1)
-        $args = array(
+/*        $args = array(
             'type' => 'post',
             'posts_per_page' => 2,
             'offset' => 1,
@@ -61,7 +96,7 @@
 
         // prevent the new object from affecting the original WP query
         wp_reset_postdata();
-
+*/
         ?>
     </div>
 
