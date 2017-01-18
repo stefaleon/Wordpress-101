@@ -56,3 +56,7 @@
 * Call *get_sidebar()* in *index.php*.
 * Style *index.php* with Bootstrap grid in order to place the sidebar on the right side of the grid.
 * In order for the sidebar to appear on pages with templates different than the default (per *index.php*), the same markup which includes the *dynamic_sidebar* hook has to be recreated in the respective template file.
+
+## 0.0.9 Customize the frontpage using instances of the *WP Query* class
+* Create a new template *page-home.php* to use for the frontpage, starting with a copy of *index.php*, instead of editing *index.php* with an *is_front_page* if-else statement, so that the overall code remains cleaner.
+* Edit the new template to the desired markup, using new instances of the *WP Query* class. Ensure that the original *WP Query* class is not affected, by resetting the post data with *wp_reset_postdata()*.
