@@ -2,28 +2,29 @@
 
 <div class="row">
 
-    <div class="col-xs-12">
-        <!--  Create a new WP_Query object that presents the last blog post in a full row
-        and use it with the loop-->
-
         <?php
-            $lastBlogPost = new WP_Query('type=post&posts_per_page=1');
+            $args = array(
+                'type' => 'post',
+                'posts_per_page' => 3,
+            );
+            $lastBlogPost = new WP_Query($args);
 
             if($lastBlogPost->have_posts()):
                     while($lastBlogPost->have_posts()): $lastBlogPost->the_post(); ?>
 
-                        <?php  get_template_part('content', get_post_format()) ?>
+                        <div class="col-xs-12 col-sm-4">
+                            <?php  get_template_part('content','featured') ?>
+                        </div>
 
                 <?php endwhile;
             endif;
 
             // prevent the new object from affecting the original WP query
             wp_reset_postdata();
-
         ?>
+</div>
 
-    </div>
-
+<div class="row">
 
     <!--  The good old loop with the default query -->
 

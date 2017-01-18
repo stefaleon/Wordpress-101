@@ -60,3 +60,6 @@
 ## 0.0.9 Customize the frontpage using instances of the *WP Query* class
 * Create a new template *page-home.php* to use for the frontpage, starting with a copy of *index.php*, instead of editing *index.php* with an *is_front_page* if-else statement, so that the overall code remains cleaner.
 * Edit the new template to the desired markup, using new instances of the *WP Query* class. Ensure that the original *WP Query* class is not affected, by resetting the post data with *wp_reset_postdata()*.
+
+## 0.0.10.1 Style the main page featured content
+* Create *content-featured.php* which can be used as a component. Apply the desired Bootstrap grid column styling when calling to it with *get_template_part('content','featured')* inside *page-home.php*.
