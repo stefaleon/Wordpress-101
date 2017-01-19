@@ -68,3 +68,12 @@
 * Add a *category_in* filter in the arguments array of the *WP Query* object, which allows the display of certain categories of posts only, declared by the tag_IDs of the desired categories which can be seen in each category's URI the Dashboard.
 * The undesired categories can be filtered out with the use of the *category_not_in* filter.
 * In order to include the last post of each selected category instead of the latest of all posts of all desired categories, the loop logic needs a rearrangement. The desired categories are included in an argument provided to *get_categories()* and the result is introduced into a foreach loop whereof one post for each selected category is extracted via the performed post loop on each single category *WP Query* object.
+
+## 0.0.10.3.1 Add a Bootstrap carousel
+* Insert the php code which contains the *WP Query* class definition and the call to the post loop inside the carousel's slides wrapper.
+* Instead of the *get_template_part()* call in the post loop, the carousel's single slider markup is applied.
+* The *the_post_thumbnail* function is called in place of the carousel's image tag.
+* The *the_title* and the *the_category* calls are placed inside the carousel's caption tag.
+* Increase the counter *$count* in the end of every foreach loop and use it to set the active state of the carousel when it is equal to 0.
+* In order for the carousel to have its bullet indicators functioning properly, create a *$bullets* variable and, from inside the post loop, append *(.= )* to it the relevant code snippet with *data-slide-to* set to *$count*. Echo the *$bullets* variable to the carousel's indicators ordered list declaration.
+* For the active indicator class the variable *$bulletsactive* is being set to active when *$count* is set to 0.
