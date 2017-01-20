@@ -77,3 +77,7 @@
 * Increase the counter *$count* in the end of every foreach loop and use it to set the active state of the carousel when it is equal to 0.
 * In order for the carousel to have its bullet indicators functioning properly, create a *$bullets* variable and, from inside the post loop, append *(.= )* to it the relevant code snippet with *data-slide-to* set to *$count*. Echo the *$bullets* variable to the carousel's indicators ordered list declaration.
 * For the active indicator class the variable *$bulletsactive* is being set to active when *$count* is set to 0.
+
+## 0.0.10.3.2 Style the carousel
+* Dynamically adjust the way the post images are presented in the carousel as well as the appearance of the post titles that link to the posts by assigning appropriate values to the relevant carousel classes in *theme01.css*.
+* Add an empty string as an argument in *the_category()* so that the default *li* bullet gets overridden.

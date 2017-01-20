@@ -2,6 +2,8 @@
 
 <div class="row">
 
+        <div class="col-xs-12">
+
         <div id="theme01-carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
 
 
@@ -34,10 +36,10 @@
                               while($lastBlogPost->have_posts()): $lastBlogPost->the_post(); ?>
 
                               <div class="item <?php if($count==0): echo 'active'; endif; ?>">
-                                <?php the_post_thumbnail('thumbnail') ?>
+                                <?php the_post_thumbnail('full') ?>
                                 <div class="carousel-caption">
                                   <?php the_title( sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())),'</a></h1>'); ?>
-                                  <small<?php the_category() ?></small>
+                                  <small><?php the_category(' ') ?></small>
                                 </div>
                               </div>
 
@@ -79,8 +81,7 @@
           </a>
         </div>
 
-
-
+    </div>
 
 
 

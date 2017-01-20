@@ -1,5 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+
 .carousel {
 	background: #000;
-	margin: 0 1em 0 1em;
-	min-height: 200px;	
+	font-family: Cabin,Lobster, Ubuntu;
+	height: 250px;
+}
+
+.carousel .item {
+	height: 250px;
+	overflow: hidden;
+}
+
+.carousel .item img {
+	width: 100%;
+	height: auto;
+	margin-top: -10%;
+}
+
+.carousel-caption a {
+	color: #fff;
+	text-shadow: 1px 1px 2px black, 0 0 20px #396, 0 0 5px darkgreen;
+	text-decoration: none;
 }
