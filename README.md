@@ -81,3 +81,9 @@
 ## 0.0.10.3.2 Style the carousel
 * Dynamically adjust the way the post images are presented in the carousel as well as the appearance of the post titles that link to the posts by assigning appropriate values to the relevant carousel classes in *theme01.css*.
 * Add an empty string as an argument in *the_category()* so that the default *li* bullet gets overridden.
+
+## 0.0.11 The *single.php* file
+* Create the *single.php* file, add the header, the footer and the post loop wherein the post content and thumbnail will be displayed.
+* Add the *the_tags()* function to display tags.
+* Add the *edit_post_link* function which displays the *"Edit This"* link if an authorized user is logged in.
+* Use the *comments_template()* function to present the commments section if *comments_open()* function is set to true. Comments are by default ebnabled for each post. To prevent the comments form from displaying they have to be disabled on post creation via the *discussions* panel (made visible via the *Screen Options* tab).
